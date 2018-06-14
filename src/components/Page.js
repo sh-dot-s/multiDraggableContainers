@@ -12,8 +12,8 @@ export default class Page extends React.Component {
                     isDraggable: true,
                     tabIndex: 1
                 },{
-                    cardText: "Text 2 ND",
-                    isDraggable: false,
+                    cardText: "Text 2 D",
+                    isDraggable: true,
                     tabIndex: 2
                 }
             ]
@@ -26,9 +26,11 @@ export default class Page extends React.Component {
         return (
             <div>
                 <section id="MultipleContainers" className="MultipleContainers">
-                    <Section containerId="1" containerName="Sample" cards = {this.state.cards}/>
-                    <Section containerId="2" containerName="Sample2" cards = {this.state.cards}/>
-                    <Section containerId="3" containerName="Sample3" cards = {this.state.cards}/>
+                    <div className="card-columns">
+                        <Section containerId="1" containerName="Sample" cards = {this.state.cards}/>
+                        <Section containerId="2" containerName="Sample2" cards = {this.state.cards}/>
+                        <Section containerId="3" containerName="Sample3" cards = {this.state.cards}/>
+                    </div>
                 </section>
             </div>
         );

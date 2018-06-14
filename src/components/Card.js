@@ -1,26 +1,16 @@
 import React from 'react';
 
 export const Card = (props) => {
-    console.log(props);
-    if (props.isDraggable) {
-        return (
-            <li
-                className="StackedListItem StackedListItem--isDraggable StackedListItem--item2"
-                tabIndex={props.tabIndex}>
-                <div className="StackedListContent">
-                    <h4 className="Heading Heading--size4 text-no-select">{props.cardText}</h4>
-                    <div className="DragHandle"></div>
-                    <div className="Pattern Pattern--typeHalftone"></div>
-                    <div className="Pattern Pattern--typePlaced"></div>
-                </div>
-            </li>
-        )
-    }
     return (
-        <li className={"StackedListItem StackedListItem--item" + props.tabIndex}>
-            <div className="StackedListContent">
-                <h4 className="Heading Heading--size4 text-no-select">{props.cardText}</h4>
-                <div className="NopeHandle"></div>
+        <li
+            className={props.isDraggable
+            ? "StackedListItem--isDraggable"
+            : "card-body"}
+            tabIndex={props.tabIndex}>
+            <div className="card bg-default shadow p-4 mb-4 bg-white">
+                <div className="card-body text-center">
+                    <p className="card-text">{props.cardText}</p>
+                </div>
             </div>
         </li>
     );
